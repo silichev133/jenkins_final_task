@@ -1,0 +1,14 @@
+version: '3'
+services:
+  jenkins:
+    image: jenkins/jenkins:lts-jdk11
+    ports:
+      - "8080:8080"
+    volumes:
+      - "/home/vagrant/jenkins:/var/jenkins_home:rw"
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - "/home/vagrant/nginx:/etc/nginx/conf.d:rw"
